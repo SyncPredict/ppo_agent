@@ -136,7 +136,7 @@ class TradingEnvironment(gym.Env):
             self.balance += sell_amount * current_price * (1 - self.transaction_fee_percent / 100)
             self.btc_balance -= sell_amount
             profit = (current_price - avg_purchase_price) * sell_amount
-            reward += profit / 100
+            reward += profit
 
         # Покупка
         if buy_amount > 0:
@@ -144,7 +144,7 @@ class TradingEnvironment(gym.Env):
             self.btc_balance += buy_amount
             self.purchased_prices.append(current_price)
             profit = (avg_purchase_price - current_price) * sell_amount
-            reward += profit / 100
+            reward += profit
         return reward, sell_amount, buy_amount
 
     def reset(self):

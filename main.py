@@ -25,8 +25,8 @@ ppo_agent = ContinuousPPO(num_features, num_actions)
 
 # Параметры для обучения
 num_episodes = 5  # Количество эпизодов для обучения
-train_max_timesteps = (len(df_train) - 1) // 10
-test_max_timesteps = (len(df_test) - 1) // 50
+train_max_timesteps = (len(df_train) - 1)
+test_max_timesteps = (len(df_test) - 1)
 
 # Максимальное количество временных шагов в эпизоде
 
